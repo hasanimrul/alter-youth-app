@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import {
   View,
   Text,
@@ -14,15 +14,15 @@ const HeroForm = () => {
   const screenWidth = Dimensions.get('window').width;
 
   const incrementScholarships = () => {
-    setScholarships((prev) => (prev < 3 ? prev + 1 : prev));
+    setScholarships(prev => (prev < 3 ? prev + 1 : prev));
   };
 
   const decrementScholarships = () => {
-    setScholarships((prev) => (prev > 1 ? prev - 1 : prev));
+    setScholarships(prev => (prev > 1 ? prev - 1 : prev));
   };
 
   return (
-    <View style={[styles.container, { width: screenWidth - 40 }]}>
+    <View style={[styles.container, {width: screenWidth - 40}]}>
       <Text style={styles.title}>
         Join the <Text style={styles.highlight}>#alteryouthrevolution</Text>
       </Text>
@@ -58,8 +58,7 @@ const HeroForm = () => {
                 style={[
                   styles.counterButton,
                   scholarships === 1 && styles.disabledButton,
-                ]}
-              >
+                ]}>
                 <Text style={styles.counterText}>-</Text>
               </TouchableOpacity>
               <Text style={styles.counterValue}>{scholarships}</Text>
@@ -69,8 +68,7 @@ const HeroForm = () => {
                 style={[
                   styles.counterButton,
                   scholarships === 3 && styles.disabledButton,
-                ]}
-              >
+                ]}>
                 <Text style={styles.counterText}>+</Text>
               </TouchableOpacity>
             </View>
@@ -95,19 +93,19 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: '#fff',
     borderRadius: 10,
-    padding: 20,
+    padding: 15,
     shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
+    shadowOffset: {width: 0, height: 2},
     shadowOpacity: 0.1,
     shadowRadius: 4,
     elevation: 5,
     alignSelf: 'center',
+    marginVertical: 15,
   },
   title: {
-    fontSize: 20,
+    fontSize: 15,
     fontWeight: '600',
     marginBottom: 20,
-    textAlign: 'center',
   },
   highlight: {
     color: '#1dc468',
@@ -127,25 +125,24 @@ const styles = StyleSheet.create({
     marginTop: 20,
   },
   label: {
-    fontSize: 14,
+    fontSize: 13,
     fontWeight: '600',
     marginBottom: 10,
   },
   counterRow: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    alignItems: 'center',
+    alignItems: 'end',
   },
   counterControls: {
     flexDirection: 'row',
-    alignItems: 'center',
+    alignItems: 'end',
   },
   counterButton: {
     backgroundColor: '#1dc468',
     paddingVertical: 5,
     paddingHorizontal: 15,
     borderRadius: 5,
-    marginHorizontal: 5,
   },
   disabledButton: {
     backgroundColor: '#ccc',
@@ -164,10 +161,11 @@ const styles = StyleSheet.create({
     borderRadius: 5,
   },
   costContainer: {
+    flexDirection: 'row',
     alignItems: 'center',
   },
   costText: {
-    fontSize: 18,
+    fontSize: 15,
     fontWeight: '600',
   },
   costSubText: {

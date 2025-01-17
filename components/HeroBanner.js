@@ -37,6 +37,8 @@ const styles = StyleSheet.create({
     resizeMode: 'cover',
   },
   contentContainer: {
+    // flexDirection:'column',
+    // gap: 20,
     marginTop: -200,
     paddingHorizontal: 20,
   },
