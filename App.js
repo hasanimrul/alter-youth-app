@@ -11,6 +11,7 @@ import ScholarshipEligibility from './src/components/ScholarshipEligibility';
 import ScholarshipPortfolio from './src/components/ScholarshipPortfolio';
 import ScholarshipApp from './src/components/ScholarshipApp';
 import Association from './src/components/Association';
+import GovtPrimarySchools from './src/components/GovtPrimarySection';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <UberScholarship />
         <ScholarshipCommunity />
         <CommunityImpact />
+        <GovtPrimarySchools /> 
         <ScholarshipEligibility />
         <ScholarshipPortfolio />
         <ScholarshipApp />
