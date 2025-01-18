@@ -8,6 +8,9 @@ import ScholarshipCommunity from './src/components/ScholarshipCommunity';
 import Footer from './src/components/Footer';
 import CommunityImpact from './src/components/CommunityImpact';
 import ScholarshipEligibility from './src/components/ScholarshipEligibility';
+import ScholarshipPortfolio from './src/components/ScholarshipPortfolio';
+import ScholarshipApp from './src/components/ScholarshipApp';
+import Association from './src/components/Association';
 
 function App() {
   return (
@@ -19,6 +22,9 @@ function App() {
         <ScholarshipCommunity />
         <CommunityImpact />
         <ScholarshipEligibility />
+        <ScholarshipPortfolio />
+        <ScholarshipApp />
+        <Association />
         <Footer />
       </ScrollView>
     </View>

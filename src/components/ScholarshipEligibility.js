@@ -29,8 +29,7 @@ const ScholarshipEligibility = () => {
         <Text style={styles.header}>Scholarship Eligibility</Text>
         <Text style={styles.subHeader}>
           Only students who are currently enrolled in Government Primary Schools
-          and fall
-          {'\n'}under any of the following criteria are eligible to apply for
+          and fall under any of the following criteria are eligible to apply for
           scholarships
         </Text>
       </View>
@@ -40,6 +39,7 @@ const ScholarshipEligibility = () => {
           <EligibilityCard option={option} key={index} />
         ))}
       </View>
+      <View style={styles.separator} />
     </ScrollView>
   );
 };
@@ -62,38 +62,37 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
   },
   headerContainer: {
-    alignItems: 'center',
     marginBottom: 20,
   },
   header: {
     fontSize: 28,
     fontWeight: 'bold',
-    textAlign: 'center',
   },
   subHeader: {
     fontSize: 14,
-    textAlign: 'center',
     lineHeight: 20,
   },
   cardsContainer: {
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    justifyContent: 'space-between',
-    gap: 15,
-    paddingVertical: 10,
+    flexDirection: 'column',
+    gap: 20,
+    paddingBottom: 20,
   },
   card: {
     flexDirection: 'row',
     alignItems: 'center',
+    gap: 10,
     backgroundColor: 'white',
     borderRadius: 10,
     shadowColor: '#000',
-    shadowOffset: {width: 0, height: 4},
-    shadowOpacity: 0.2,
-    shadowRadius: 4,
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 5,
     padding: 15,
-    maxWidth: '45%',
-    marginBottom: 15,
+    marginHorizontal: 10,
   },
   icon: {
     width: 40,
@@ -105,7 +104,12 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   cardDesc: {
-    maxWidth: '30ch',
+    maxWidth: '95%',
+  },
+  separator: {
+    height: 1,
+    backgroundColor: '#ccc',
+    marginVertical: 15,
   },
 });
 
