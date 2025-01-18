@@ -10,6 +10,7 @@ import {
   Dimensions,
   Pressable,
 } from 'react-native';
+import Location from '../assets/icons/location.svg';
 
 const screenWidth = Dimensions.get('window').width;
 
@@ -166,7 +167,10 @@ const GovtPrimarySchools = () => {
               resizeMode="cover"
             />
             <Text style={styles.schoolName}>{school.name}</Text>
-            <Text style={styles.location}>{school.location}</Text>
+            <View style={styles.locationContainer}>
+              <Location />
+              <Text style={styles.locationText}>{school.location}</Text>
+            </View>
           </TouchableOpacity>
         ))}
       </ScrollView>
@@ -190,6 +194,7 @@ const GovtPrimarySchools = () => {
                   {selectedSchool.applicants}
                 </Text>
                 <View style={styles.locationContainer}>
+                  <Location />
                   <Text style={styles.locationText}>
                     {selectedSchool.location}
                   </Text>
@@ -229,7 +234,6 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
     paddingHorizontal: 10,
-    
   },
   title: {
     fontSize: 20,
@@ -238,7 +242,7 @@ const styles = StyleSheet.create({
     paddingVertical: 20,
   },
   scrollContainer: {
-    // paddingHorizontal: 10,
+    paddingVertical: 20,
     alignItems: 'center',
   },
   card: {
@@ -251,18 +255,13 @@ const styles = StyleSheet.create({
   },
   image: {
     width: '100%',
-    height: 150,
+    height: 200,
   },
   schoolName: {
     fontSize: 16,
     fontWeight: 'bold',
-    paddingHorizontal: 5,
-  },
-  location: {
-    fontSize: 14,
-    color: '#555',
     paddingHorizontal: 10,
-    paddingBottom: 10,
+    paddingVertical: 5,
   },
   backdrop: {
     flex: 1,
@@ -311,10 +310,11 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     marginBottom: 10,
+    paddingHorizontal: 10,
+    gap: 5,
   },
   locationText: {
     fontSize: 14,
-    color: '#1dc468',
   },
   details: {
     fontSize: 14,
