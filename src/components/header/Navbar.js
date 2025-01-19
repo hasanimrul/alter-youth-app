@@ -1,20 +1,38 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {View, TouchableOpacity, StyleSheet} from 'react-native';
 import Logo from '../../assets/icons/blue-logo.svg';
 import HamburgerMenu from '../../assets/icons/blue-hamburger.svg';
+import Close from '../../assets/icons/close.svg';
+import Sidebar from './Sidebar';
 
-const NavBar = ({toggle, isOpen}) => {
+const NavBar = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
   return (
-    <View style={styles.header}>
-      <View style={styles.container}>
-        <TouchableOpacity onPress={() => console.log('Logo Pressed')}>
-          <HamburgerMenu width={30} height={30} />
-        </TouchableOpacity>
-        <TouchableOpacity onPress={toggle}>
-          <Logo width={200} height={40} />
-        </TouchableOpacity>
+    <>
+      {/* Render Sidebar */}
+      <Sidebar isOpen={isMenuOpen} toggle={toggleMenu} />
+      <View style={styles.header}>
+        <View style={styles.container}>
+          {isMenuOpen ? (
+            <TouchableOpacity onPress={toggleMenu}>
+              <Close width={40} height={40} />
+            </TouchableOpacity>
+          ) : (
+            <TouchableOpacity onPress={toggleMenu}>
+              <HamburgerMenu width={30} height={30} />
+            </TouchableOpacity>
+          )}
+
+          <TouchableOpacity>
+            <Logo width={200} height={40} />
+          </TouchableOpacity>
+        </View>
       </View>
-    </View>
+    </>
   );
 };
 

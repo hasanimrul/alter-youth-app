@@ -11,6 +11,7 @@ import {
   Pressable,
 } from 'react-native';
 import Location from '../assets/icons/location.svg';
+import Quote from '../assets/icons/quote.svg'
 
 const screenWidth = Dimensions.get('window').width;
 
@@ -166,10 +167,12 @@ const GovtPrimarySchools = () => {
               style={styles.image}
               resizeMode="cover"
             />
-            <Text style={styles.schoolName}>{school.name}</Text>
-            <View style={styles.locationContainer}>
-              <Location />
-              <Text style={styles.locationText}>{school.location}</Text>
+            <View style={styles.cardContent}>
+              <Text style={styles.schoolName}>{school.name}</Text>
+              <View style={styles.locationContainer}>
+                <Location />
+                <Text style={styles.locationText}>{school.location}</Text>
+              </View>
             </View>
           </TouchableOpacity>
         ))}
@@ -216,8 +219,9 @@ const GovtPrimarySchools = () => {
                   </View>
                 </View>
                 <View style={styles.teacherQuoteContainer}>
+                  <Quote />
                   <Text style={styles.teacherQuote}>
-                    "{selectedSchool.teacher.quote}"
+                    {selectedSchool.teacher.quote}
                   </Text>
                 </View>
               </View>
@@ -253,14 +257,16 @@ const styles = StyleSheet.create({
     overflow: 'hidden',
     elevation: 3,
   },
+  cardContent: {
+paddingHorizontal: 20,
+  },
   image: {
     width: '100%',
     height: 200,
   },
   schoolName: {
-    fontSize: 16,
+    fontSize: 14,
     fontWeight: 'bold',
-    paddingHorizontal: 10,
     paddingVertical: 5,
   },
   backdrop: {
@@ -271,28 +277,25 @@ const styles = StyleSheet.create({
   },
   modalContainer: {
     backgroundColor: 'white',
-    borderRadius: 10,
-    width: '90%',
+    width: '100%',
     overflow: 'hidden',
   },
   closeButton: {
     position: 'absolute',
     top: 10,
-    right: 10,
+    left: 10,
     zIndex: 10,
     backgroundColor: 'white',
     borderRadius: 50,
-    padding: 5,
+    paddingHorizontal: 7,
   },
   closeButtonText: {
-    fontSize: 18,
+    fontSize: 16,
     color: 'black',
   },
   schoolImage: {
     width: '100%',
     height: 200,
-    borderTopLeftRadius: 10,
-    borderTopRightRadius: 10,
   },
   content: {
     padding: 15,
@@ -310,7 +313,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     marginBottom: 10,
-    paddingHorizontal: 10,
     gap: 5,
   },
   locationText: {
@@ -346,6 +348,8 @@ const styles = StyleSheet.create({
     color: '#666',
   },
   teacherQuoteContainer: {
+    flexDirection: 'row',
+    gap: 5,
     marginTop: 10,
   },
   teacherQuote: {
