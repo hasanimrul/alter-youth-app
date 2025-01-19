@@ -71,12 +71,7 @@ const Sidebar = ({isOpen, toggle}) => {
   );
 };
 
-const MenuItem = ({title, icon, onPress}) => (
-  <TouchableOpacity style={styles.menuItem} onPress={onPress}>
-    <View style={styles.menuIcon}>{icon}</View>
-    <Text style={styles.menuText}>{title}</Text>
-  </TouchableOpacity>
-);
+
 
 const styles = StyleSheet.create({
   backdrop: {
